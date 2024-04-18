@@ -61,12 +61,13 @@ const renderEntry = config => file =>
 const getConfig = (root, config) => {
   const readmeFilename = config.get('structure.readme')
   const bookTitle = config.get('title')
+  const summaryFilename = ".summary.md"
 
   return {
     root,
     bookTitle: Maybe.fromNullable(bookTitle),
     isReadme: path => path.includes(readmeFilename),
     readmeFilename,
-    summaryFilename: config.get('structure.summary')
+    summaryFilename
   }
 }
